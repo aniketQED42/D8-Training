@@ -4,27 +4,30 @@ namespace Drupal\d8training\Access;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\Access\AccessInterface;
-use Drupal\d8training\Service;
+use Drupal\d8training\Services\MyServices;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+
 
 /**
  * Checks access for displaying configuration translation page.
  */
-class CustomAccessCheck implements AccessInterface{
+class CustomAccessCheck implements AccessInterface { 
 
   /**
    * Drupal core Request Stack.
    *
-   * @var \Drupal\example\MyService
+   * @var \Drupal\d8training\Services
    */
   private $myService;
 
   /**
    * CustomAccessCheck constructor.
    *
-   * @param \Drupal\example\MyService
-   *   MyService does things.
+   * @param \Drupal\d8training\Services
+   *   MyServices does things.
    */
-  public function __construct(MyService $myService) {
+  public function __construct(MyServices $myService) {
     $this->myService = $myService;
   }
 
@@ -37,10 +40,11 @@ class CustomAccessCheck implements AccessInterface{
    * @return \Drupal\Core\Access\AccessResultInterface
    *   The access result.
    */
-  public function access(AccountInterface $account) {
-    // Check permissions and combine that with any custom access checking needed. Pass forward
-    // parameters from the route and/or request as needed.
-    return ($this->myService->checkAccess()) ? AccessResult::allowed() : AccessResult::forbidden();
+  public function access(AccountInterface $account, $node) {
+       
+    $node1 =\Drupal::entityTypeManager()->getStorage('node')->load($node);
+
+    return ($this->myService->checkAccess($node1)) ? AccessResult::allowed() : AccessResult::forbidden();
   }
 
 }

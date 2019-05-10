@@ -7,17 +7,18 @@ d8training.hello:
     _permission: 'access training content'
 
 d8training.abc:
-  path: '/abc/{node}'
+  path: '/list/{node}'
   defaults:
-    _controller: '\Drupal\d8training\Controller\CustomCheck::checkAccess'
-    _title: 'Trial'
+    _controller: '\Drupal\d8training\Controller\CustomCheck::controllerClass'
+    _title: 'Static Content Page'
   requirements: 
-     _access: 'TRUE'
+     _example_access_check: 'TRUE'
+     _permission: 'access training content'
 
 d8training.static_content:
-  path: '/static-content'
+  path: '/trial'
   defaults:
-    _controller: '\Drupal\d8training\Controller\Trial::hello'
+    _controller: '\Drupal\d8training\Controller\CustomCheck::controllerClass'
     _title: 'Static Content Page'
   requirements:
     _access: 'TRUE'
