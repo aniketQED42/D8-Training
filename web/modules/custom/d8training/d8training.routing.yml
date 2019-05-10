@@ -1,0 +1,23 @@
+d8training.hello:
+  path: '/custompath'
+  defaults: 
+    _controller: '\Drupal\d8training\Controller\Trial::hello'
+    _title: 'Static Content Page'
+  requirements: 
+    _permission: 'access training content'
+
+d8training.abc:
+  path: '/abc/{node}'
+  defaults:
+    _controller: '\Drupal\d8training\Controller\CustomCheck::checkAccess'
+    _title: 'Trial'
+  requirements: 
+     _access: 'TRUE'
+
+d8training.static_content:
+  path: '/static-content'
+  defaults:
+    _controller: '\Drupal\d8training\Controller\Trial::hello'
+    _title: 'Static Content Page'
+  requirements:
+    _access: 'TRUE'

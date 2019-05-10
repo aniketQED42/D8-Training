@@ -1,0 +1,3 @@
+services:
+  customaccesscheck:
+    class: Drupal\d8training\Access\CustomAccessCheck

@@ -1,0 +1,14 @@
+uuid: 08297a8f-8332-4344-a4f0-a6feaa20064b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - aniket.gaikwad@qed42.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

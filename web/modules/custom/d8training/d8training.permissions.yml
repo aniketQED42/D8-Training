@@ -1,0 +1,4 @@
+access training content:
+  title: 'Access Training Content'
+  description: 'Permission to access D8-Training content.'
+  restrict access: TRUE
