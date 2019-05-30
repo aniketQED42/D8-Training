@@ -1,0 +1,21 @@
+uuid: 8dcad09e-adeb-43c5-be56-23665bee4a8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - d8training
+  theme:
+    - bartik
+id: isbnblock
+theme: bartik
+region: sidebar_first
+weight: -7
+provider: null
+plugin: isbn_block
+settings:
+  id: isbn_block
+  label: 'ISBN block'
+  provider: d8training
+  label_display: visible
+  isbn: '9780142181119'
+visibility: {  }

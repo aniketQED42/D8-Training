@@ -1,0 +1,7 @@
+{
+    "name": "aniketgaikwad/d8training",
+    "description": "Custom module composer.json",
+    "require": {
+        "antoineaugusti/google-books": "^0.3.0"
+    }
+}
